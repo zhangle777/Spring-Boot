@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+description = """demo"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version:'2.0.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.3.RELEASE'
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version:'2.2.0'
+    runtime group: 'mysql', name: 'mysql-connector-java', version:'5.1.46'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.3.RELEASE'
+}

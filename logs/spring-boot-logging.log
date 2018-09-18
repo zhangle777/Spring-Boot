@@ -1,0 +1,179 @@
+2018-08-09 15:24:56.251  INFO 9112 --- [main] c.e.demo.controller.TestControllerTest   : Starting TestControllerTest on ytsh-xxb-111092 with PID 9112 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:24:56.252  INFO 9112 --- [main] c.e.demo.controller.TestControllerTest   : The following profiles are active: test
+2018-08-09 15:24:56.690  WARN 9112 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:24:57.298  INFO 9112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-08-09 15:24:57.464  INFO 9112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-08-09 15:24:58.422  INFO 9112 --- [main] c.e.demo.controller.TestControllerTest   : Started TestControllerTest in 2.634 seconds (JVM running for 3.403)
+2018-08-09 15:24:58.565  INFO 9112 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-08-09 15:24:58.568  INFO 9112 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-08-09 15:25:36.213  INFO 8256 --- [main] c.e.demo.controller.TestControllerTest   : Starting TestControllerTest on ytsh-xxb-111092 with PID 8256 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:25:36.214  INFO 8256 --- [main] c.e.demo.controller.TestControllerTest   : The following profiles are active: test
+2018-08-09 15:25:36.593  WARN 8256 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:25:37.212  INFO 8256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-08-09 15:25:37.378  INFO 8256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-08-09 15:25:38.365  INFO 8256 --- [main] c.e.demo.controller.TestControllerTest   : Started TestControllerTest in 2.532 seconds (JVM running for 3.281)
+2018-08-09 15:25:38.599  INFO 8256 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-08-09 15:25:38.602  INFO 8256 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-08-09 15:27:25.342  INFO 15264 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ytsh-xxb-111092 with PID 15264 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:27:25.343  INFO 15264 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: test
+2018-08-09 15:27:25.741  WARN 15264 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:27:26.256  INFO 15264 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-09 15:27:26.256  INFO 15264 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-09 15:27:26.258  INFO 15264 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:\app\zhangle\product\12.1.0\dbhome_2\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;C:\python352;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;E:\jdk\bin;E:\jdk\jre\bin;E:\gradle-4.8\bin;%MYSQL_HOME%\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Java\jdk1.7.0_80\bin;C:\Program Files (x86)\Java\jdk1.7.0_80\jre\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;C:\python352;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\apache-maven-3.1.1\bin;E:\git\git1\cmd;.]
+2018-08-09 15:27:26.316  INFO 15264 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-09 15:27:26.518  INFO 15264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-08-09 15:27:26.676  INFO 15264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-08-09 15:27:27.269  INFO 15264 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 2.193 seconds (JVM running for 2.671)
+2018-08-09 15:28:23.381  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ytsh-xxb-111092 with PID 6196 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:28:23.382  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : The following profiles are active: test
+2018-08-09 15:28:23.813  WARN 6196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:28:24.385  INFO 6196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-09 15:28:24.385  INFO 6196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-09 15:28:24.389  INFO 6196 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:\app\zhangle\product\12.1.0\dbhome_2\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;C:\python352;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;E:\jdk\bin;E:\jdk\jre\bin;E:\gradle-4.8\bin;%MYSQL_HOME%\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Java\jdk1.7.0_80\bin;C:\Program Files (x86)\Java\jdk1.7.0_80\jre\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;C:\python352;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\apache-maven-3.1.1\bin;E:\git\git1\cmd;.]
+2018-08-09 15:28:24.445  INFO 6196 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-09 15:28:24.705  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-08-09 15:28:24.897  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-08-09 15:28:25.597  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 2.48 seconds (JVM running for 2.996)
+2018-08-09 15:28:50.560  INFO 6196 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-09 15:30:13.290  INFO 6196 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-08-09 15:30:13.296  INFO 6196 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-08-09 15:30:13.593  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ytsh-xxb-111092 with PID 6196 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:30:13.594  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-08-09 15:30:13.734  WARN 6196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:30:13.843  INFO 6196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-09 15:30:13.843  INFO 6196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-09 15:30:13.857  INFO 6196 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-09 15:30:13.907  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2018-08-09 15:30:13.911  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2018-08-09 15:30:14.040  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 0.466 seconds (JVM running for 111.44)
+2018-08-09 15:30:30.071  INFO 6196 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-09 15:30:53.554  INFO 6196 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2018-08-09 15:30:53.562  INFO 6196 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2018-08-09 15:30:53.767  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ytsh-xxb-111092 with PID 6196 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:30:53.767  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-08-09 15:30:53.896  WARN 6196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:30:53.983  INFO 6196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-09 15:30:53.983  INFO 6196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-09 15:30:54.006  INFO 6196 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-09 15:30:54.053  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2018-08-09 15:30:54.056  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2018-08-09 15:30:54.165  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 0.416 seconds (JVM running for 151.565)
+2018-08-09 15:34:01.237  INFO 6196 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-09 15:37:16.773  INFO 6196 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2018-08-09 15:37:16.785  INFO 6196 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2018-08-09 15:37:17.079  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ytsh-xxb-111092 with PID 6196 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:37:17.079  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-08-09 15:37:17.209  WARN 6196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:37:17.293  INFO 6196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-09 15:37:17.293  INFO 6196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-09 15:37:17.341  INFO 6196 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-09 15:37:17.385  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2018-08-09 15:37:17.388  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2018-08-09 15:37:17.503  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 0.44 seconds (JVM running for 534.903)
+2018-08-09 15:38:12.058  INFO 6196 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2018-08-09 15:38:12.063  INFO 6196 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2018-08-09 15:38:12.201 ERROR 6196 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to load property source from location 'classpath:/application.yml'
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:538) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.loadForFileExtension(ConfigFileApplicationListener.java:497) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:465) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.lambda$null$6(ConfigFileApplicationListener.java:447) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[na:1.8.0_161]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.lambda$load$7(ConfigFileApplicationListener.java:446) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[na:1.8.0_161]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:443) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:335) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.addPropertySources(ConfigFileApplicationListener.java:214) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.postProcessEnvironment(ConfigFileApplicationListener.java:197) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEnvironmentPreparedEvent(ConfigFileApplicationListener.java:184) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEvent(ConfigFileApplicationListener.java:170) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139) ~[spring-context-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127) ~[spring-context-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:74) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:54) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:358) [spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317) [spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255) [spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243) [spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at com.example.demo.DemoApplication.main(DemoApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_161]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_161]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+Caused by: org.yaml.snakeyaml.scanner.ScannerException: while scanning a simple key
+ in 'reader', line 22, column 5:
+        com.example.demo.dao=debug
+        ^
+could not find expected ':'
+ in 'reader', line 23, column 3:
+      file: logs/spring-boot-logging.log
+      ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:466) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.scanner.ScannerImpl.needMoreTokens(ScannerImpl.java:280) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:225) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:557) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:157) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:147) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:227) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:249) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:240) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:228) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:249) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:240) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:228) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:154) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123) ~[snakeyaml-1.19.jar:na]
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547) ~[snakeyaml-1.19.jar:na]
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:166) ~[spring-beans-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:139) ~[spring-beans-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:75) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.loadDocuments(ConfigFileApplicationListener.java:556) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:518) ~[spring-boot-2.0.3.RELEASE.jar:2.0.3.RELEASE]
+	... 28 common frames omitted
+
+2018-08-09 15:38:14.630  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ytsh-xxb-111092 with PID 6196 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:38:14.631  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-08-09 15:38:14.760  WARN 6196 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:38:14.844  INFO 6196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-09 15:38:14.844  INFO 6196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-09 15:38:14.853  INFO 6196 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-09 15:38:14.896  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2018-08-09 15:38:14.900  INFO 6196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2018-08-09 15:38:15.004  INFO 6196 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 0.391 seconds (JVM running for 592.404)
+2018-08-09 15:38:53.061  INFO 3764 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on ytsh-xxb-111092 with PID 3764 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:38:53.062  INFO 3764 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-08-09 15:38:53.509  WARN 3764 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:38:54.091  INFO 3764 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-08-09 15:38:54.091  INFO 3764 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-09 15:38:54.094  INFO 3764 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:\app\zhangle\product\12.1.0\dbhome_2\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;C:\python352;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;E:\jdk\bin;E:\jdk\jre\bin;E:\gradle-4.8\bin;%MYSQL_HOME%\bin;C:\Program Files (x86)\Common Files\NetSarang;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Java\jdk1.7.0_80\bin;C:\Program Files (x86)\Java\jdk1.7.0_80\jre\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IDM Computer Solutions\UltraEdit;C:\python352;C:\Program Files\VisualSVN Server\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;E:\apache-maven-3.1.1\bin;E:\git\git1\cmd;.]
+2018-08-09 15:38:54.170  INFO 3764 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-08-09 15:38:54.407  INFO 3764 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-08-09 15:38:54.593  INFO 3764 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-08-09 15:38:55.363  INFO 3764 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 2.554 seconds (JVM running for 3.034)
+2018-08-09 15:38:59.916  INFO 3764 --- [http-nio-8089-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-09 15:38:59.957 DEBUG 3764 --- [http-nio-8089-exec-1] c.e.demo.dao.StudentDao.getStudent       : ==>  Preparing: select * from student 
+2018-08-09 15:38:59.968 DEBUG 3764 --- [http-nio-8089-exec-1] c.e.demo.dao.StudentDao.getStudent       : ==> Parameters: 
+2018-08-09 15:38:59.984 DEBUG 3764 --- [http-nio-8089-exec-1] c.e.demo.dao.StudentDao.getStudent       : <==      Total: 2
+2018-08-09 15:39:19.618  INFO 6632 --- [main] c.e.demo.controller.TestControllerTest   : Starting TestControllerTest on ytsh-xxb-111092 with PID 6632 (started by wangpengfei in F:\公司项目\SpringBootDemo)
+2018-08-09 15:39:19.620  INFO 6632 --- [main] c.e.demo.controller.TestControllerTest   : No active profile set, falling back to default profiles: default
+2018-08-09 15:39:20.042  WARN 6632 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo.dao.*]' package. Please check your configuration.
+2018-08-09 15:39:20.667  INFO 6632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-08-09 15:39:20.835  INFO 6632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-08-09 15:39:21.793  INFO 6632 --- [main] c.e.demo.controller.TestControllerTest   : Started TestControllerTest in 2.626 seconds (JVM running for 3.368)
+2018-08-09 15:39:21.940 DEBUG 6632 --- [main] c.e.demo.dao.StudentDao.getStudent       : ==>  Preparing: select * from student 
+2018-08-09 15:39:21.960 DEBUG 6632 --- [main] c.e.demo.dao.StudentDao.getStudent       : ==> Parameters: 
+2018-08-09 15:39:21.971 DEBUG 6632 --- [main] c.e.demo.dao.StudentDao.getStudent       : <==      Total: 2
+2018-08-09 15:39:22.054  INFO 6632 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-08-09 15:39:22.057  INFO 6632 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-08-09 15:40:28.028  INFO 3764 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-08-09 15:40:28.034  INFO 3764 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

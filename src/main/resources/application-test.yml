@@ -1,0 +1,6 @@
+server:
+  port: 8088
+person:
+  name: 测试环境
+  age: 133
+  address: 四川达州
