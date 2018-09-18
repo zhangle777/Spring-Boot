@@ -6,8 +6,8 @@ version = '0.0.1-SNAPSHOT'
 
 description = """demo"""
 
-sourceCompatibility = 1.5
-targetCompatibility = 1.5
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 }
@@ -22,6 +22,8 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version:'2.0.3.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.3.RELEASE'
     compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version:'2.2.0'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.3.RELEASE'
     runtime group: 'mysql', name: 'mysql-connector-java', version:'5.1.46'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.3.RELEASE'
 }

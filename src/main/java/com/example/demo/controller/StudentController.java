@@ -26,9 +26,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController{
 
   @Autowired
-  private StudentService studentService;
+  public StudentService studentService;
   @Autowired
-  private Person person;
+  public Person person;
 
   @GetMapping("/info")
   public Object getStudentInfo(@RequestParam(value = "id") Integer id){
@@ -51,6 +51,7 @@ public class StudentController{
     studentService.insert(studentForm);
     Map<String,Object> result = new HashMap<>();
     return result;
+
   }
 
   @GetMapping("/testCustomer")
