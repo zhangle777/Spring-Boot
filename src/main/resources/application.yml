@@ -16,7 +16,7 @@ spring:
 logging:
   level:
     org.springframework: WARN
-    org.spring.springboot.dao: DEBUG
+    org.spring.springboot.dao: warn
     com.example.demo.dao: debug
 #  file: logs/spring-boot-logging.log
 multipart-properties:
