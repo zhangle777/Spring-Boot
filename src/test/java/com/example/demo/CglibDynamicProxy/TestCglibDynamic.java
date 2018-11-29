@@ -1,4 +1,4 @@
-package com.example.demo.other.CglibDynamicProxy;
+package com.example.demo.CglibDynamicProxy;
 
 /**
  * @author byron

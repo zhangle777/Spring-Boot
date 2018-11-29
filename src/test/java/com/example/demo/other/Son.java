@@ -7,5 +7,11 @@
 package com.example.demo.other;
 
 public class Son extends Person{
- // public String str = "2";
+  public String sdf = "ddss";
+  public String str = "2";
+  public String fustr = super.str;
+  public static final String DD = "sss";
+  public void test(){
+
+  }
 }

@@ -1,4 +1,4 @@
-package com.example.demo.other.CglibDynamicProxy;
+package com.example.demo.CglibDynamicProxy;
 
 import java.lang.reflect.Method;
 import org.springframework.cglib.proxy.Enhancer;

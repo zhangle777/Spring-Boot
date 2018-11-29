@@ -15,6 +15,12 @@ public class Test2 {
   public static void main(String[] args) {
 
     Person person = new Person();
+    Person person1 = new Son();
+    Grandson<String,Object> grandson = new Grandson();
+    System.out.println();
+    if(person1 instanceof Person){
+      System.out.println("12");
+    }
     Object o = person.getSon();
     person.setAge(1);
     if(o instanceof Son){

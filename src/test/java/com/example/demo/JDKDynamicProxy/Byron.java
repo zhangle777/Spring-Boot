@@ -1,4 +1,4 @@
-package com.example.demo.other.JDKDynamicProxy;
+package com.example.demo.JDKDynamicProxy;
 
 /**
  * 真实对象

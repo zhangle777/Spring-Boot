@@ -1,4 +1,4 @@
-package com.example.demo.other.CglibDynamicProxy;
+package com.example.demo.CglibDynamicProxy;
 
 /**
  * 真实对象，使用cglib动态代理可以不用实现接口
