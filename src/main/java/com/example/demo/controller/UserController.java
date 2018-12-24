@@ -13,9 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -23,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018/8/24 11:18
  */
 
-@RestController
+@Controller
 @RequestMapping(value = "/user")
 @Validated
 public class UserController {
@@ -31,7 +35,13 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @GetMapping(value = "/login",name = "登陆")
+  @GetMapping(value = "/index")
+  public String abc(){
+    return "login";
+  }
+
+  @ResponseBody
+  @PostMapping(value = "/login",name = "登陆")
   public Object login(@NotNull String userName,
       @NotNull String password,String remember,
       HttpServletRequest req,HttpServletResponse resp){

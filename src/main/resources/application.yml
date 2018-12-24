@@ -13,6 +13,17 @@ spring:
     username: root
 #  profiles:
 #    active: test
+  security:
+    user:
+      name: admin
+      password: 123
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    servlet:
+      content-type: text/html
 logging:
   level:
     org.springframework: WARN
@@ -22,5 +33,8 @@ logging:
 multipart-properties:
   filePathPrefix: http://www.baidu.com
   filePathSuffix: 宝贝
+
+
+
 
 

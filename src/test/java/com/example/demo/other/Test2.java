@@ -16,6 +16,7 @@ public class Test2 {
 
     Person person = new Person();
     Person person1 = new Son();
+    person1.getStr();
     Grandson<String,Object> grandson = new Grandson();
     System.out.println();
     if(person1 instanceof Person){

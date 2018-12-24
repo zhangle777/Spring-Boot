@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpSession;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -22,6 +23,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * @author byron
  * @date 2018/8/20 11:22
  */
+
 @Aspect
 @Component
 public class MyCustormInterceptor {
@@ -31,7 +33,7 @@ public class MyCustormInterceptor {
   protected UserService userService;
 
   public static final String TOKEN = "token";
-  @Pointcut("execution(* com.example.demo.controller.*.*(..)) && !execution(public * com.example.demo.controller.UserController.login(..))")
+  @Pointcut("execution(* com.example.demo.controller.*.*(..)) && !execution(public * com.example.demo.controller.UserController.*(..))")
   public void pointcut(){}
 
   @Before("pointcut()")
@@ -61,8 +63,9 @@ public class MyCustormInterceptor {
     }
   }
 
-  @AfterReturning("pointcut()")
-  public void after(JoinPoint joinPoint){
+  @AfterReturning(returning = "object",pointcut = "pointcut()")
+  public void afterReturning(Object object){
+    System.out.println("这是aop的afterReturning方法返回的数据为"+object);
     ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
     HttpServletRequest req = attributes.getRequest();
 
@@ -70,5 +73,9 @@ public class MyCustormInterceptor {
     if(token != null){
 //      req.getSession().removeAttribute(TOKEN);
     }
+  }
+  @After("pointcut()")
+  public void  after(){
+    System.out.println("这是aop的after方法");
   }
 }

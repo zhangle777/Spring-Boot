@@ -22,8 +22,14 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version:'2.0.3.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.3.RELEASE'
     compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version:'2.2.0'
+    // https://mvnrepository.com/artifact/org.apache.velocity/velocity
+    compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.3.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.0.3.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.3.RELEASE'
     runtime group: 'mysql', name: 'mysql-connector-java', version:'5.1.46'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.3.RELEASE'
 }

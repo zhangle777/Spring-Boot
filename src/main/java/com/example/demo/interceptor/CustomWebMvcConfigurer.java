@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +22,7 @@ public class CustomWebMvcConfigurer implements WebMvcConfigurer {
       @Override
       public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
           Object handler) throws Exception {
-        System.out.println(123);
+        System.out.println("这是自定义WebMvcConfigurer");
         return true;
       }
     });
