@@ -7,7 +7,7 @@
 package com.example.demo.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.example.demo.config.MyCustomException;
+import com.example.demo.config.TestConfig;
 import com.example.demo.pojo.Person;
 import com.example.demo.pojo.Student;
 import com.example.demo.pojo.form.StudentForm;
@@ -27,6 +27,8 @@ public class StudentController{
 
   @Autowired
   public StudentService studentService;
+  @Autowired
+  public TestConfig testConfig;
   @Autowired
   public Person person;
 
@@ -63,12 +65,13 @@ public class StudentController{
   }
   @GetMapping("/person")
   public Object person(){
-    throw new MyCustomException("哈啊啊是个");
+    System.out.println(testConfig.getName());
+//    throw new MyCustomException("哈啊啊是个");
 //    Assert.hasText("","玩你大爷");
 //
 //    return null;
 //    return null;
-   // return person.getName()+"+++++++"+person.getAge()+"======"+person.getAddress();
+    return person.getName()+"+++++++"+person.getAge()+"======"+person.getAddress();
   }
 
 }

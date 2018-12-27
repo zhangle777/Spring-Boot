@@ -9,8 +9,6 @@ import org.springframework.stereotype.Component;
  * @author byron
  * @date 2018/12/19 11:01
  */
-@Component
-@Mapper
 public interface RoleDao extends BaseMapper<Role> {
 
 }
