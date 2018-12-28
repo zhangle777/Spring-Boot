@@ -10,7 +10,20 @@ import com.example.demo.annotation.Test;
 public class Test5 {
 
   public static void main(String[] args) {
-    Test test = Test5.class.getAnnotation(Test.class);
-    System.out.println(test.value());
+//    Test test = Test5.class.getAnnotation(Test.class);
+//    System.out.println(test.value());
+
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          Thread.sleep(5*1000);
+        }catch (InterruptedException e){
+          e.printStackTrace();
+        }
+        System.out.println("hahaha");
+      }
+    }).start();
+    System.out.println("fsgsadg");
   }
 }
