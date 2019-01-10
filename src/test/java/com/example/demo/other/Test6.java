@@ -7,6 +7,7 @@ package com.example.demo.other;
 public class Test6 extends test7{
   static {
     System.out.println("dfsfsdfs");
+
   }
 }
 class AAA{
