@@ -11,15 +11,15 @@ public class Test6 extends test7{
 }
 class AAA{
   public static void main(String[] args) {
-//    //String string = new StringBuilder("AA").append("AA").toString();
-//    String string = new String("AAAA");
-//    String string1 = string.intern();
-//    String string2 = "AAAA";
-//
-////    System.out.println(string2 == string);
-////    System.out.println(string1 == string);
-//    System.out.println(string1 == string2);
-//    System.out.printf("%1.2f",11.2102);
+    //String string = new StringBuilder("AA").append("AA").toString();
+    String string = new String("AAAA");
+    String string1 = string.intern();
+    String string2 = "AAAA";
+
+//    System.out.println(string2 == string);
+//    System.out.println(string1 == string);
+    System.out.println(string1 == string2);
+    System.out.printf("%1.2f",11.2102);
     System.out.println(Test6.string);
   }
 }
