@@ -15,7 +15,7 @@ import org.springframework.scheduling.support.CronTrigger;
  * @author byron
  * @date 2018/12/28 11:46
  */
-@Configuration
+//@Configuration
 @EnableScheduling
 public class SpringDynamicTask implements SchedulingConfigurer{
 

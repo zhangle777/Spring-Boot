@@ -12,6 +12,7 @@ import com.example.demo.pojo.Person;
 import com.example.demo.pojo.Student;
 import com.example.demo.pojo.form.StudentForm;
 import com.example.demo.service.StudentService;
+import com.example.demo.util.RedisUtil;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +32,13 @@ public class StudentController{
   public TestConfig testConfig;
   @Autowired
   public Person person;
+  @Autowired
+  public RedisUtil redisUtil;
 
   @GetMapping("/info")
   public Object getStudentInfo(@RequestParam(value = "id") Integer id){
     Student student = studentService.selectById(id);
+    redisUtil.set("student",student,60);
 //    studentService.updateById()
     return student;
   }

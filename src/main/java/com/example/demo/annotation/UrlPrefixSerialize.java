@@ -19,6 +19,6 @@ public class UrlPrefixSerialize extends JsonSerializer<Object> {
   public void serialize(Object o, JsonGenerator jsonGenerator,
       SerializerProvider serializerProvider) throws IOException {
     String value = (String) o;
-      jsonGenerator.writeString(multipartProperties.getFilePathPrefix()+value);
+    jsonGenerator.writeString(multipartProperties.getFilePathPrefix()+value);
   }
 }

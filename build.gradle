@@ -28,6 +28,10 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.3.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.0.3.RELEASE'
+//    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.1.1.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.3.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.3.RELEASE'
     runtime group: 'mysql', name: 'mysql-connector-java', version:'5.1.46'
