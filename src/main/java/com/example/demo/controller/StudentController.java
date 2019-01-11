@@ -8,12 +8,14 @@ package com.example.demo.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.example.demo.config.TestConfig;
+import com.example.demo.pojo.MultipartProperties;
 import com.example.demo.pojo.Person;
 import com.example.demo.pojo.Student;
 import com.example.demo.pojo.form.StudentForm;
 import com.example.demo.service.StudentService;
 import com.example.demo.util.RedisUtil;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
@@ -38,8 +40,6 @@ public class StudentController{
   @GetMapping("/info")
   public Object getStudentInfo(@RequestParam(value = "id") Integer id){
     Student student = studentService.selectById(id);
-    redisUtil.set("student",student,60);
-//    studentService.updateById()
     return student;
   }
 
@@ -49,7 +49,9 @@ public class StudentController{
     boolean b = true;
     if(sort =="desc")
       b = false;
-    return studentService.getStudentPage(page,student,orderBy,b);
+    Page<Student> result = studentService.getStudentPage(page,student,orderBy,b);
+    redisUtil.set(result.getClass().getSimpleName(),result);
+    return result;
   }
 
   @GetMapping("insert")

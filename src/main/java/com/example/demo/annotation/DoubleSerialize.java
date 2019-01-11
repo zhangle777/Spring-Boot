@@ -13,12 +13,9 @@ import java.text.DecimalFormat;
 public class DoubleSerialize extends JsonSerializer<Double> {
 
   private DecimalFormat df = new DecimalFormat("##.0000");
-
-
   @Override
   public void serialize(Double aDouble, JsonGenerator jsonGenerator,
       SerializerProvider serializerProvider) throws IOException {
-
     jsonGenerator.writeString(df.format(aDouble));
   }
 }

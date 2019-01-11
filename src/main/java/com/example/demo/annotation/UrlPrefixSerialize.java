@@ -1,11 +1,11 @@
 package com.example.demo.annotation;
 
 import com.example.demo.pojo.MultipartProperties;
+import com.example.demo.util.SpringUtil;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author byron
@@ -13,8 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class UrlPrefixSerialize extends JsonSerializer<Object> {
 
-  @Autowired
-  private MultipartProperties multipartProperties;
+  private MultipartProperties multipartProperties = SpringUtil.getBean(MultipartProperties.class);
   @Override
   public void serialize(Object o, JsonGenerator jsonGenerator,
       SerializerProvider serializerProvider) throws IOException {

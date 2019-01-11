@@ -11,12 +11,14 @@ import com.example.demo.annotation.DoubleSerialize;
 import com.example.demo.annotation.JsonUrlPrefix;
 import com.example.demo.annotation.UrlPrefixSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.io.Serializable;
 
-public class Student{
+public class Student implements Serializable {
   private Integer id;
   private String name;
   private Integer age;
   private Double salary;
+
 
   public Integer getId() {
     return id;
@@ -26,7 +28,7 @@ public class Student{
     this.id = id;
   }
 
-//  @JsonSerialize(using = UrlPrefixSerialize.class)
+  @JsonSerialize(using = UrlPrefixSerialize.class)
   public String getName() {
     return name;
   }
