@@ -11,8 +11,6 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "multipart-properties")
 public class MultipartProperties {
 
-  private final static MultipartProperties INSTANCE = new MultipartProperties();
-
   private MultipartProperties(){}
 
   /**
@@ -39,12 +37,5 @@ public class MultipartProperties {
 
   public void setFilePathSuffix(String filePathSuffix) {
     this.filePathSuffix = filePathSuffix;
-  }
-  /**
-   * @return 新实例
-   */
-  public static MultipartProperties newInstance() {
-    MultipartProperties multipartProperties = new MultipartProperties();
-    return multipartProperties;
   }
 }
