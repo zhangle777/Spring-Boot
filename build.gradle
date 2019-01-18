@@ -1,39 +1,72 @@
-apply plugin: 'java'
-apply plugin: 'maven'
-
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-
-description = """demo"""
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
-}
-
-
-
-repositories {
-        
-     maven { url "http://repo.maven.apache.org/maven2" }
-}
-dependencies {
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version:'2.0.3.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.3.RELEASE'
-    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version:'2.2.0'
-    // https://mvnrepository.com/artifact/org.apache.velocity/velocity
-    compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.3.RELEASE'
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.0.3.RELEASE'
+//buildscript {
+//    repositories {
+//        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//    }
+//
+//    dependencies {
+//        classpath "com.github.jengelman.gradle.plugins:shadow:2.0.4"
+//    }
+//}
+//
+//apply plugin: 'java'
+//apply plugin: 'maven'
+//apply plugin: "com.github.johnrengelman.shadow"
+//
+//group = 'com.example'
+//version = '0.0.1-SNAPSHOT'
+//
+//description = """demo"""
+//
+//sourceCompatibility = 1.8
+//targetCompatibility = 1.8
+//tasks.withType(JavaCompile) {
+//	options.encoding = 'UTF-8'
+//}
+//
+//repositories {
+//     maven { url "http://repo.maven.apache.org/maven2" }
+//}
+//dependencies {
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version:'2.0.3.RELEASE'
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.3.RELEASE'
+//    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version:'2.2.0'
+//    // https://mvnrepository.com/artifact/org.apache.velocity/velocity
+//    compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
+//    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.3.RELEASE'
+//    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.0.3.RELEASE'
 //    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
-//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.1.1.RELEASE'
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.3.RELEASE'
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.3.RELEASE'
-    runtime group: 'mysql', name: 'mysql-connector-java', version:'5.1.46'
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.3.RELEASE'
-}
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.0.3.RELEASE'
+//    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.0.3.RELEASE'
+//    runtime group: 'mysql', name: 'mysql-connector-java', version:'5.1.46'
+//    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'2.0.3.RELEASE'
+//}
+////jar {
+////
+////    String someString = ''
+////    configurations.runtime.each { someString = someString + " lib\\" + it.name }
+////    //遍历项目的所有依赖的jar包赋值给变量someString
+////    manifest {
+////        attributes 'Main-Class': 'com.example.demo.DemoApplication'
+////        attributes 'Class-Path': someString
+////    }
+////}
+//
+////禁掉jar task
+//jar.enabled = false
+//shadowJar {
+//    baseName = 'spring-boot'
+//    //classifier是生成jar包的后缀
+//    classifier = null
+//    version = '0.0.1-SNAPSHOT'
+//    manifest {
+//        attributes 'Main-Class': 'com.example.demo.DemoApplication'
+//    }
+//
+//    exclude 'no-overflow.css'
+//}
+//
+//assemble.dependsOn(shadowJar)
+//

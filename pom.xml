@@ -23,23 +23,56 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+    <spring.boot.version>2.0.3.RELEASE</spring.boot.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-freemarker</artifactId>
+      <version>${spring.boot.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-aop</artifactId>
+      <version>${spring.boot.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring.boot.version}</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>1.7</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      <version>2.0.3.RELEASE</version>
+    </dependency>
+
 
     <dependency>
       <groupId>mysql</groupId>
@@ -50,8 +83,10 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <version>${spring.boot.version}</version>
       <scope>test</scope>
     </dependency>
+
     <!-- 热启动-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -68,18 +103,28 @@
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <!-- id必须唯一 -->
+      <id>ali-repository</id>
+      <!-- 见名知意即可 -->
+      <name>ali-repository</name>
+      <!-- 仓库的url地址 -->
+      <url>http://maven.aliyun.com/nexus/content/groups/central/</url>
+    </repository>
+  </repositories>
+
   <build>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
+          <mainClass>com.example.demo.DemoApplication</mainClass>
         <!-- 没有该配置，devtools 不生效 -->
           <fork>true</fork>
         </configuration>
       </plugin>
     </plugins>
   </build>
-
-
 </project>
