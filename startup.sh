@@ -9,4 +9,4 @@ then
    sleep 5s
 fi
 echo 开始启动程序
-nohup java -jar /var/lib/jenkins/workspace/spring-boot_测试/demo-0.0.1-SNAPSHOT.jar>log.txt
+nohup java -jar /var/lib/jenkins/workspace/spring-boot_测试/target/demo-0.0.1-SNAPSHOT.jar>log.txt 2>&1 &
