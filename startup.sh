@@ -1,3 +1,4 @@
+#!/bin/bash
 echo 脚本杀死原进程
 pid=`ps -ef|grep demo-0.0.1-SNAPSHOT.jar | grep -v grep |awk '{print $2}'`
 if [ $pid ]; then
