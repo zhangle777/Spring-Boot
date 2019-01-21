@@ -11,4 +11,4 @@ fi
 echo 开始启动程序
 nohup java -jar /var/lib/jenkins/workspace/spring-boot_测试/target/demo-0.0.1-SNAPSHOT.jar>/var/lib/jenkins/workspace/spring-boot_测试/nohup.txt &
 pid2=`ps -ef|grep demo-0.0.1-SNAPSHOT.jar | grep -v grep |awk '{print $2}'`
-echo App  is  running pid=${pid2}
+echo App  is  running pid2=${pid2}
