@@ -22,10 +22,8 @@ public class SpringDynamicTask implements SchedulingConfigurer{
   public static int job=1;
   private static String cron;
   public SpringDynamicTask() {
-    new Thread(new Runnable() {
-      @Override
-      public void run() {
-        System.out.println("当前线程"+Thread.currentThread());
+    new Thread(()->{
+      System.out.println("当前线程"+Thread.currentThread());
         cron = "0/5 * * * * ?";
         try {
          Thread.sleep(15*1000);
@@ -34,26 +32,17 @@ public class SpringDynamicTask implements SchedulingConfigurer{
         }
         cron = "0/2 * * * * ?";
         System.err.println("cron change to: " + cron);
-      }
     }).start();
   }
 
   @Override
   public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
-
-    taskRegistrar.addTriggerTask(new Runnable() {
-      @Override
-      public void run() {
-        System.err.println("当前线程："+Thread.currentThread()+"，动态定时任务启动,当前时间为:"+ LocalDateTime.now()+"，当前次数为"+job++);
-      }
-    },new Trigger(){
-      @Override
-      public Date nextExecutionTime(TriggerContext triggerContext) {
-        CronTrigger trigger = new CronTrigger(cron);
-        Date nextExec = trigger.nextExecutionTime(triggerContext);
-        return nextExec;
-      }
+    taskRegistrar.addTriggerTask(()->
+      System.err.println("当前线程："+Thread.currentThread()+"，动态定时任务启动,当前时间为:"+ LocalDateTime.now()+"，当前次数为"+job++)
+    ,(triggerContext)->{
+          CronTrigger trigger = new CronTrigger(cron);
+          Date nextExec = trigger.nextExecutionTime(triggerContext);
+          return nextExec;
     });
-
   }
 }
