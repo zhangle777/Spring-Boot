@@ -11,10 +11,10 @@ public class TestDynamic {
 
   public static void main(String[] args) {
     Byron byron = new Byron();
-   InvocationHandler byronIntereface = new JDKDynamicProxy(byron);
+   InvocationHandler byronIntereface = new JDKDynamicProxy(byron);//调用处理器
 
     ByronIntereface real = (ByronIntereface) Proxy.newProxyInstance(byronIntereface.getClass().
-        getClassLoader(),byron.getClass().getInterfaces(),byronIntereface);
+        getClassLoader(),byron.getClass().getInterfaces(),byronIntereface); //
     real.hello();
   }
 }

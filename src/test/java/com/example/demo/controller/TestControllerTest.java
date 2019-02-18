@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
-import static org.junit.Assert.*;
-
-import jdk.net.SocketFlow.Status;
+import com.example.demo.service.StudentService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,6 +22,9 @@ public class TestControllerTest {
 
   @Autowired
   private WebApplicationContext wac;
+  @Autowired
+  public StudentService studentService;
+
   private MockMvc mockMvc;
   @Before
   public void setUp() throws Exception {
@@ -44,6 +45,7 @@ public class TestControllerTest {
 
   @Test
   public void hello2() throws Exception{
+    studentService.insertToQueue("哈哈");
     mockMvc.perform(MockMvcRequestBuilders.get("/student/list")
 //        .param("pages","2")
         .param("size","2")
