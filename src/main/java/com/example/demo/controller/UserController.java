@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
@@ -21,13 +22,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author byron
  * @date 2018/8/24 11:18
  */
 
-@Controller
+@Controller  //注意：如果使用了thymeleaf模板引擎来跳转页面，则不能使用RestController来跳转。
 @RequestMapping(value = "/user")
 @Validated
 public class UserController {
@@ -40,7 +42,6 @@ public class UserController {
     return "login";
   }
 
-  @ResponseBody
   @PostMapping(value = "/login",name = "登陆")
   public Object login(@NotNull String userName,
       @NotNull String password,String remember,
@@ -67,11 +68,10 @@ public class UserController {
       //如果用户没有自动登陆则session的存活时间为2小时
       req.getSession().setMaxInactiveInterval(60*60*2); // Session保存两小时
     }
-
-    Map<String,Object> result = new HashMap<>();
-    result.put("status",1);
-    result.put("message","登陆成功");
-    return result;
+    ModelAndView modelAndView = new ModelAndView();
+    modelAndView.addObject("user",user);
+    modelAndView.setViewName("home");
+    return modelAndView;
   }
 
 }
