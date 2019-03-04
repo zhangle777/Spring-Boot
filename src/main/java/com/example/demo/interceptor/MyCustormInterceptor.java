@@ -16,6 +16,7 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -42,24 +43,15 @@ public class MyCustormInterceptor {
     HttpServletRequest req = attributes.getRequest();
     HttpSession session = req.getSession();
     Cookie[] cookies = req.getCookies();
-    //登陆时校验cookie
-    String cookieValue = null;
-    if(cookies == null)
-      throw new MyCustomException("请先登陆");
+    Assert.notNull(cookies,"请先登录");
     for(Cookie cookie : cookies){
       if(Constants.LOGIN_COOKIE_SIGN.equals(cookie.getName())){
-        cookieValue = cookie.getValue();
-
+        break;
+      }else if(Constants.JSESSIONID.equals(cookie.getName())){
+        Object o = session.getAttribute(Constants.WITH_SESSION_USER);
+        Assert.notNull(o,"请先登录");
         break;
       }
-    }
-    User user = (User)session.getAttribute(Constants.WITH_SESSION_USER);
-    if(cookieValue == null && user == null)
-      throw new MyCustomException("请先登陆");
-    else if(cookieValue != null ){
-      cookieValue = cookieValue.split(":")[0];
-      user = userService.selectById(Long.valueOf(cookieValue));
-      session.setAttribute(Constants.WITH_SESSION_USER,user);
     }
   }
 

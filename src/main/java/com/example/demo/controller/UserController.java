@@ -11,10 +11,12 @@ import java.util.Map;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.Assert;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
@@ -38,8 +40,34 @@ public class UserController {
   private UserService userService;
 
   @GetMapping(value = "/index")
-  public String abc(){
-    return "login";
+  public Object abc(HttpServletRequest req){
+    Cookie[] cookies = req.getCookies();
+    HttpSession session = req.getSession();
+    Object o = session.getAttribute(Constants.WITH_SESSION_USER);
+    ModelAndView modelAndView = new ModelAndView();
+    if(o != null){
+      User user = (User)o;
+      modelAndView.addObject("user",user);
+      modelAndView.setViewName("home");
+      return modelAndView;
+    }else if(cookies != null){
+      String cookieValue = null;
+      for(Cookie cookie : cookies){
+        if(Constants.LOGIN_COOKIE_SIGN.equals(cookie.getName())){
+          cookieValue = cookie.getValue();
+          break;
+        }else if(Constants.JSESSIONID.equals(cookie.getName())){
+          return "login";
+        }
+      }
+      cookieValue = cookieValue.split(":")[0];
+      User user = userService.selectById(Long.valueOf(cookieValue));
+      modelAndView.addObject("user",user);
+      modelAndView.setViewName("home");
+      return modelAndView;
+    }else{
+      return "login";
+    }
   }
 
   @PostMapping(value = "/login",name = "登陆")
@@ -63,15 +91,23 @@ public class UserController {
       cookie.setPath("/");
       resp.addCookie(cookie);
       //自动登陆session存活时间为cookie过期时间
-      req.getSession().setMaxInactiveInterval(cookie.getMaxAge()); // Session保存两小时
-    }else{
-      //如果用户没有自动登陆则session的存活时间为2小时
-      req.getSession().setMaxInactiveInterval(60*60*2); // Session保存两小时
+      req.getSession().setMaxInactiveInterval(cookie.getMaxAge());
     }
     ModelAndView modelAndView = new ModelAndView();
     modelAndView.addObject("user",user);
     modelAndView.setViewName("home");
     return modelAndView;
+  }
+
+  @GetMapping(value = "/loginout")
+  public Object loginout(HttpServletRequest req,HttpServletResponse resp){
+    //清空session
+    req.getSession().invalidate();
+    for(Cookie cookie: req.getCookies()){
+      //清空cookie
+      cookie.setMaxAge(0);
+    }
+    return "login";
   }
 
 }

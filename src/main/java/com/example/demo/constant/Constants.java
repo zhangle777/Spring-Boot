@@ -22,4 +22,6 @@ public class Constants {
   //存储用户对象的sessionkey
   public static final  String WITH_SESSION_USER = "withSessionUser";
 
+  public static final String JSESSIONID = "JSESSIONID";
+
 }
