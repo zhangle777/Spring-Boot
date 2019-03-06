@@ -44,20 +44,31 @@ public class TestControllerTest {
 
   @Test
   public void hello2() throws Exception{
-    studentService.insertToQueue("哈哈");
-    mockMvc.perform(MockMvcRequestBuilders.get("/student/list")
-//        .param("pages","2")
-        .param("size","2")
-//        .param("current","2")
-//        .param("age","22")
-        .param("name","张")
-        .param("orderBy","id")
-        .cookie(cookie)
-//        .param("sort","desc")
-        .accept(MediaType.APPLICATION_JSON))
-        .andDo(MockMvcResultHandlers.print())
-        .andExpect(MockMvcResultMatchers.status().isOk())
-        .andReturn();
-
+    mockMvc.perform(MockMvcRequestBuilders.get("/student/info")
+            .param("id","1")
+            .cookie(cookie)
+            .accept(MediaType.APPLICATION_JSON))
+            .andDo(MockMvcResultHandlers.print())
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andReturn();
   }
+
+//  @Test
+//  public void hello2() throws Exception{
+//    studentService.insertToQueue("哈哈");
+//    mockMvc.perform(MockMvcRequestBuilders.get("/student/list")
+////        .param("pages","2")
+//        .param("size","2")
+////        .param("current","2")
+////        .param("age","22")
+//        .param("name","张")
+//        .param("orderBy","id")
+//        .cookie(cookie)
+////        .param("sort","desc")
+//        .accept(MediaType.APPLICATION_JSON))
+//        .andDo(MockMvcResultHandlers.print())
+//        .andExpect(MockMvcResultMatchers.status().isOk())
+//        .andReturn();
+//
+//  }
 }
