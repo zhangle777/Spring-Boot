@@ -14,4 +14,10 @@ public class Son extends Person{
   public void test(){
 
   }
+
+  public static void main(String[] args) {
+    Long i = new Long(1);
+    long i1 = new Long(1);
+    System.out.println(i==(i1));
+  }
 }

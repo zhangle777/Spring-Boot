@@ -7,9 +7,31 @@
 package com.example.demo.pojo.form;
 
 import com.example.demo.pojo.Student;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class StudentForm extends Student {
 
+  @Override
+  public Integer getId() {
+    return super.getId();
+  }
 
+  @NotBlank
+  @Override
+  public String getName() {
+    return super.getName();
+  }
 
+  @NotNull
+  @Override
+  public Integer getAge() {
+    return super.getAge();
+  }
+
+  @NotNull
+  @Override
+  public Double getSalary() {
+    return super.getSalary();
+  }
 }
