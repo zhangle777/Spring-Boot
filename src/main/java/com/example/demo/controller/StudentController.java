@@ -8,21 +8,18 @@ package com.example.demo.controller;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.example.demo.config.TestConfig;
-import com.example.demo.pojo.MultipartProperties;
+
 import com.example.demo.pojo.Person;
 import com.example.demo.pojo.Student;
 import com.example.demo.pojo.form.StudentForm;
 import com.example.demo.service.StudentService;
 import com.example.demo.util.RedisUtil;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,7 +41,7 @@ public class StudentController{
   @GetMapping("/info")
   public Object getStudentInfo(@RequestParam(value = "id") Integer id){
     Student student = studentService.selectById(id);
-    return student;
+    return ResponseEntity.ok(student);
   }
 
   @GetMapping("/list")
