@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -18,7 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class TestControllerTest {
 
@@ -43,20 +44,31 @@ public class TestControllerTest {
 
   @Test
   public void hello2() throws Exception{
-    studentService.insertToQueue("哈哈");
-    mockMvc.perform(MockMvcRequestBuilders.get("/student/list")
-//        .param("pages","2")
-        .param("size","2")
-//        .param("current","2")
-//        .param("age","22")
-        .param("name","张")
-        .param("orderBy","id")
-        .cookie(cookie)
-//        .param("sort","desc")
-        .accept(MediaType.APPLICATION_JSON))
-        .andDo(MockMvcResultHandlers.print())
-        .andExpect(MockMvcResultMatchers.status().isOk())
-        .andReturn();
-
+    mockMvc.perform(MockMvcRequestBuilders.get("/student/info")
+            .param("id","1")
+            .cookie(cookie)
+            .accept(MediaType.APPLICATION_JSON))
+            .andDo(MockMvcResultHandlers.print())
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andReturn();
   }
+
+//  @Test
+//  public void hello2() throws Exception{
+//    studentService.insertToQueue("哈哈");
+//    mockMvc.perform(MockMvcRequestBuilders.get("/student/list")
+////        .param("pages","2")
+//        .param("size","2")
+////        .param("current","2")
+////        .param("age","22")
+//        .param("name","张")
+//        .param("orderBy","id")
+//        .cookie(cookie)
+////        .param("sort","desc")
+//        .accept(MediaType.APPLICATION_JSON))
+//        .andDo(MockMvcResultHandlers.print())
+//        .andExpect(MockMvcResultMatchers.status().isOk())
+//        .andReturn();
+//
+//  }
 }
