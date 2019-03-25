@@ -17,7 +17,8 @@ import com.example.demo.util.RedisUtil;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,16 +40,17 @@ public class StudentController{
   public RedisUtil redisUtil;
 
   @GetMapping("/info")
+  @Cacheable(value = "cacheValue",key = "result_student_"+"result.#id")
   public Object getStudentInfo(@RequestParam(value = "id") Integer id){
     Student student = studentService.selectById(id);
-    return ResponseEntity.ok(student);
+    return student;
   }
 
   @GetMapping("/list")
   public Object getStudentListPage(Page<Student> page,Student student,String orderBy,
       @RequestParam(defaultValue = "asc",required = false) String sort){
     boolean b = true;
-    if(sort =="desc")
+    if(sort.equals("desc"))
       b = false;
     Page<Student> result = studentService.getStudentPage(page,student,orderBy,b);
     redisUtil.set(result.getClass().getSimpleName(),result);
@@ -56,6 +58,7 @@ public class StudentController{
   }
 
   @PostMapping("/insert")
+  @CachePut(value = "cacheValue",key = "result.id")
   public Object insertStudent(@Validated StudentForm studentForm){
     studentService.insert(studentForm);
     Map<String,Object> result = new HashMap<>();

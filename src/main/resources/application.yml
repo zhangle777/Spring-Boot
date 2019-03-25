@@ -37,6 +37,11 @@ spring:
     timeout: 1000
   mvc:
     static-path-pattern: /static/**
+  cache:
+    cache-names: cacheValue
+    type: redis
+    redis:
+      use-key-prefix: false
 logging:
   level:
     org.springframework: WARN

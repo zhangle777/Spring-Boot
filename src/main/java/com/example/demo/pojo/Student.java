@@ -8,7 +8,6 @@ package com.example.demo.pojo;
 
 
 import com.example.demo.annotation.DoubleSerialize;
-import com.example.demo.annotation.JsonUrlPrefix;
 import com.example.demo.annotation.UrlPrefixSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.io.Serializable;
