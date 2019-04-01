@@ -31,7 +31,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @date 2018/8/24 11:18
  */
 
-@Controller  //注意：如果使用了thymeleaf模板引擎来跳转页面，则不能使用RestController来跳转。
+@RestController  //注意：如果使用了thymeleaf模板引擎来跳转页面，则不能使用RestController来跳转。
 @RequestMapping(value = "/user")
 @Validated
 public class UserController {
@@ -57,7 +57,8 @@ public class UserController {
           cookieValue = cookie.getValue();
           break;
         }else if(Constants.JSESSIONID.equals(cookie.getName())){
-          return "login";
+          modelAndView.setViewName("login");
+          return modelAndView;
         }
       }
       cookieValue = cookieValue.split(":")[0];
@@ -66,7 +67,8 @@ public class UserController {
       modelAndView.setViewName("home");
       return modelAndView;
     }else{
-      return "login";
+      modelAndView.setViewName("login");
+      return modelAndView;
     }
   }
 

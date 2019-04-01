@@ -40,7 +40,7 @@ public class StudentController{
   public RedisUtil redisUtil;
 
   @GetMapping("/info")
-  @Cacheable(value = "cacheValue",key = "result_student_"+"result.#id")
+//  @Cacheable(value = "cacheValue",key = "result_student_"+"result.#id")
   public Object getStudentInfo(@RequestParam(value = "id") Integer id){
     Student student = studentService.selectById(id);
     return student;
@@ -58,7 +58,7 @@ public class StudentController{
   }
 
   @PostMapping("/insert")
-  @CachePut(value = "cacheValue",key = "result.id")
+//  @CachePut(value = "cacheValue",key = "result.id")
   public Object insertStudent(@Validated StudentForm studentForm){
     studentService.insert(studentForm);
     Map<String,Object> result = new HashMap<>();

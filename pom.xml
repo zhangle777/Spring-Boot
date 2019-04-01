@@ -73,34 +73,6 @@
       <version>2.0.3.RELEASE</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/io.github.hengyunabc/zabbix-api -->
-    <!--<dependency>-->
-      <!--<groupId>io.github.hengyunabc</groupId>-->
-      <!--<artifactId>zabbix-api</artifactId>-->
-      <!--<version>0.0.2</version>-->
-    <!--</dependency>-->
-
-    <!-- https://mvnrepository.com/artifact/com.github.0312birdzhang/Zabbix4j -->
-    <dependency>
-      <groupId>com.github.0312birdzhang</groupId>
-      <artifactId>Zabbix4j</artifactId>
-      <version>0.1.9</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-simple</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.slf4j</groupId>
-          <artifactId>log4j-over-slf4j</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>ch.qos.logback</groupId>
-          <artifactId>logback-classic</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
