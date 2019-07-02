@@ -40,36 +40,37 @@ public class UserController {
   private UserService userService;
 
   @GetMapping(value = "/index")
-  public Object abc(HttpServletRequest req){
-    Cookie[] cookies = req.getCookies();
-    HttpSession session = req.getSession();
-    Object o = session.getAttribute(Constants.WITH_SESSION_USER);
-    ModelAndView modelAndView = new ModelAndView();
-    if(o != null){
-      User user = (User)o;
-      modelAndView.addObject("user",user);
-      modelAndView.setViewName("home");
-      return modelAndView;
-    }else if(cookies != null){
-      String cookieValue = null;
-      for(Cookie cookie : cookies){
-        if(Constants.LOGIN_COOKIE_SIGN.equals(cookie.getName())){
-          cookieValue = cookie.getValue();
-          break;
-        }else if(Constants.JSESSIONID.equals(cookie.getName())){
-          modelAndView.setViewName("login");
-          return modelAndView;
-        }
-      }
-      cookieValue = cookieValue.split(":")[0];
-      User user = userService.selectById(Long.valueOf(cookieValue));
-      modelAndView.addObject("user",user);
-      modelAndView.setViewName("home");
-      return modelAndView;
-    }else{
-      modelAndView.setViewName("login");
-      return modelAndView;
-    }
+  public Object abc(){
+//    Cookie[] cookies = req.getCookies();
+//    HttpSession session = req.getSession();
+//    Object o = session.getAttribute(Constants.WITH_SESSION_USER);
+//    ModelAndView modelAndView = new ModelAndView();
+//    if(o != null){
+//      User user = (User)o;
+//      modelAndView.addObject("user",user);
+//      modelAndView.setViewName("home");
+//      return modelAndView;
+//    }else if(cookies != null){
+//      String cookieValue = null;
+//      for(Cookie cookie : cookies){
+//        if(Constants.LOGIN_COOKIE_SIGN.equals(cookie.getName())){
+//          cookieValue = cookie.getValue();
+//          break;
+//        }else if(Constants.JSESSIONID.equals(cookie.getName())){
+//          modelAndView.setViewName("login");
+//          return modelAndView;
+//        }
+//      }
+//      cookieValue = cookieValue.split(":")[0];
+//      User user = userService.selectById(Long.valueOf(cookieValue));
+//      modelAndView.addObject("user",user);
+//      modelAndView.setViewName("home");
+//      return modelAndView;
+//    }else{
+//      modelAndView.setViewName("login");
+//      return modelAndView;
+//    }
+    return new ModelAndView("login");
   }
 
   @PostMapping(value = "/login",name = "登陆")
@@ -110,6 +111,11 @@ public class UserController {
       cookie.setMaxAge(0);
     }
     return "login";
+  }
+  
+  @GetMapping(value = "/loginError")
+  public Object loginError(){
+    return new ModelAndView("login_error");
   }
 
 }

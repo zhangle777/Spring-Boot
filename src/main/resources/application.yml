@@ -7,8 +7,7 @@ mybatis-plus:
     map-underscore-to-camel-case: true
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/byron?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/byron?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     password: root
     username: root
 #  profiles:

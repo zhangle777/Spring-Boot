@@ -13,11 +13,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 @EnableScheduling
 public class SpringStaticTask {
   public int job = 1;
-  //@Scheduled(cron = "0/1 * * * * ? ")
+//  @Scheduled(cron = "0/1 * * * * ? ")
   public void job(){
     //你要做的什么事
     System.out.println("当前线程："+Thread.currentThread()+"，静态定时任务启动,当前时间为:"+ LocalDateTime.now()+"，当前次数为"+job++);
   }
-
-
 }

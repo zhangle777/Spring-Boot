@@ -2,6 +2,7 @@ package com.example.demo.security;
 
 import com.example.demo.pojo.Role;
 import com.example.demo.pojo.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -17,6 +18,7 @@ public class UserDetailsImpl implements UserDetails {
 
 
   private String userName;
+  @JsonIgnore
   private String password;
   //包含着用户对应的所有Role，在使用时调用者给对象注入roles
   private List<Role> roles;
