@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+import org.springframework.security.web.savedrequest.SavedRequest;
 
 
 /**
@@ -57,30 +58,46 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.formLogin()
-        .loginPage("/loginPage")
+    http
+        //暂时禁用csrc否则无法提交
+        .csrf()
+        .disable()
+        // 设置最多一个用户登录，如果第二个用户登陆则第一用户被踢出，并跳转到登陆页面
+        .sessionManagement().maximumSessions(1).expiredUrl("/index");
+    //表单登陆
+    http
+        .formLogin()
+        .loginPage("/loginPage") // 设置跳转的登陆页面
         .loginProcessingUrl("/login")
-//        .successHandler(loginSuccessHandler())
-        .successForwardUrl("/index")
-        .failureUrl("/loginErrorPage")
-        .and()
+//        .defaultSuccessUrl("/index")
+        .successHandler(loginSuccessHandler())
+        .failureUrl("/loginErrorPage");//设置如果出错跳转到哪个页面
+    //资源认证
+    http
         .authorizeRequests()
-        .antMatchers("/registerPage","/register","/loginPage","/loginErrorPage","/static/**")
-        .permitAll()  //表单登录，permitAll()表示这个不需要验证 登录页面，登录失败页面
-        .anyRequest().authenticated()
-        .and()
-        .csrf().disable();
+        .antMatchers("/registerPage","/register","/loginPage","/loginErrorPage","/static/**")//静态资源不验证
+        .permitAll()  //permitAll()表示这个不需要验证 登录页面，登录失败页面
+        .anyRequest().authenticated();
+    //登出
+    http
+        .logout()
+        .logoutUrl("/logout")
+        .logoutSuccessUrl("/loginPage")
+        .invalidateHttpSession(true);
   }
   
-  @Bean
   public SavedRequestAwareAuthenticationSuccessHandler loginSuccessHandler() { //登入处理
     return new SavedRequestAwareAuthenticationSuccessHandler() {
       @Override
       public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-        User userDetails = (User) authentication.getPrincipal();
-        request.setAttribute("user",userDetails.getUsername());
-        logger.info("USER : " + userDetails.getUsername() + " LOGIN SUCCESS !  ");
-        super.onAuthenticationSuccess(request, response, authentication);
+        logger.info("Success hanlder"); //这里加入需要的处理
+        String  redirectUrl = "index"; //缺省的登陆成功页面
+        SavedRequest savedRequest = (SavedRequest) request.getSession().getAttribute("SPRING_SECURITY_SAVED_REQUEST");
+        if(savedRequest != null) {
+          redirectUrl =   savedRequest.getRedirectUrl();
+          request.getSession().removeAttribute("SPRING_SECURITY_SAVED_REQUEST");
+        }
+        response.sendRedirect(redirectUrl);
       }
     };
   }

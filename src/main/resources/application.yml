@@ -8,6 +8,18 @@ mybatis-plus:
   global-config:
     id-type: 0
 spring:
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true    # 序列化日期是是否以timestamps输出
+      WRITE_BIGDECIMAL_AS_PLAIN: true    # 序列化BigDecimal时是输出原始数字还是科学计数，默认false，即以toPlainString()科学计数方式来输出
+      WRITE_ENUMS_USING_INDEX: true      # 序列化枚举是否以ordinal()来输出，默认false
+      FAIL_ON_EMPTY_BEANS: false         # 忽略无法转换的对象
+      WRITE_NULL_MAP_VALUES: false
+    default-property-inclusion: ALWAYS
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: true  # 允许对象忽略json中不存在的属性
+    time-zone: Asia/Shanghai
+    locale: zh_CN
   datasource:
     url: jdbc:mysql://localhost:3306/byron?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     password: root

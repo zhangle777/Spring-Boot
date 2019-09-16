@@ -38,12 +38,12 @@ public class Test4 implements InterfaceA {
     String reg = "[\\u4e00-\\u9fa5a-zA-Z]+";
     String reg2 = "^\\d*$";
     System.out.println("a10123186".matches(reg2));
-//    String a = "abc";
-//    a = "bcd";
-//    String a1 = "abc";
-//    String a2 = new String(a);
-//    System.out.println(a1 == a2);
-
+    String a = "abc";
+    a = "bcd";
+    String a1 = "abc";
+    String a2 = new String("abc");
+    System.out.println(a1 == a2);
+    System.out.println(a1.equals(a2));
 //    System.out.println(2&3);
 //    Map<String,String> m = new HashMap<>();
 //    m.put("a", "rrr1");

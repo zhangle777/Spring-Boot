@@ -21,9 +21,13 @@ public class Test5 {
 //    System.out.println(a==a3);
 
 
-    //String a = "hello";
-    String str = new StringBuilder("hel").append("lo").toString();
+    String a = "hello";
+    String b = "he"+"llo";
+    String str = new StringBuilder().append("hel").append("lo").toString();
   //  String str = new String("hello'");
+    System.out.println(a == b);
+    System.out.println(b == str);
+    System.out.println(str == a );
     String str2 = new StringBuilder("ja").append("va").toString();
     //在常量池中没有"hello"这个常量，所以在new的时候会创建两个。一个存放在常量池，另外一个存放在堆中。所以这两个对象是同一个地址。所以结果为true
     System.out.println(str.intern() == str);

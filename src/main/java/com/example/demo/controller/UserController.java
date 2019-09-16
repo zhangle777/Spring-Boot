@@ -1,11 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.pojo.User;
+import com.example.demo.security.CustomUser;
 import com.example.demo.service.UserService;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController  //注意：如果使用了thymeleaf模板引擎来跳转页面，则不能使用RestController来跳转。
 @Validated
-public class UserController {
+public class UserController extends BaseController {
 
   @Autowired
   private UserService userService;
@@ -29,14 +30,24 @@ public class UserController {
   @Autowired
   private PasswordEncoder passwordEncoder;
 
+  @PreAuthorize("isAuthenticated()")
   @GetMapping(value = "/loginPage",name = "登陆页面")
   public Object abc(){
-    return new ModelAndView("login");
+    CustomUser customUser = getUser();
+    if(customUser == null){
+      return new ModelAndView("login");
+    }else {
+      ModelAndView mv = new ModelAndView("redirect:/index");
+      return mv;
+    }
   }
   
   @RequestMapping("/index")
   public Object root() {
-    return new ModelAndView("home");
+    CustomUser customUser = getUser();
+    ModelAndView mv = new ModelAndView("home");
+    mv.addObject("nickName",customUser.getNickName());
+    return mv;
   }
   
   @GetMapping(value = "/registerPage",name = "注册页面")
@@ -59,7 +70,7 @@ public class UserController {
   
   @GetMapping(value = "/loginErrorPage")
   public Object loginError(){
-    return new ModelAndView("login_error");
+    return new ModelAndView("error");
   }
   
 }

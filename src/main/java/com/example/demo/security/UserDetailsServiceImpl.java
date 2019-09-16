@@ -19,6 +19,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   @Override
   public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
     User user = userService.selectOne(new EntityWrapper<User>().eq("username",s));
-    return new org.springframework.security.core.userdetails.User(s, user.getPassword(), AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+    return new CustomUser(s,user.getPassword(),user.getNickName(),user.getId(),AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
   }
 }
