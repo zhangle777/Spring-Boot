@@ -93,7 +93,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         logger.info("Success hanlder"); //这里加入需要的处理
         String  redirectUrl = "index"; //缺省的登陆成功页面
         SavedRequest savedRequest = (SavedRequest) request.getSession().getAttribute("SPRING_SECURITY_SAVED_REQUEST");
-        if(savedRequest != null) {
+        if(savedRequest != null && !savedRequest.getRedirectUrl().equals("http://localhost:8089/")) {
           redirectUrl =   savedRequest.getRedirectUrl();
           request.getSession().removeAttribute("SPRING_SECURITY_SAVED_REQUEST");
         }
