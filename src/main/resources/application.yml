@@ -64,8 +64,13 @@ logging:
 multipart-properties:
   filePathPrefix: http://www.baidu.com
   filePathSuffix: 宝贝
-
-
+security:
+  oauth2:
+    client-id: client
+    client-secret: 123456
+    authorized-grant-types: password,refresh_token
+  authorization:
+    check-token-access: isAuthenticated()
 
 
 
