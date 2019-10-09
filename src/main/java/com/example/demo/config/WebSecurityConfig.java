@@ -98,11 +98,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     return new SavedRequestAwareAuthenticationSuccessHandler() {
       @Override
       public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-        String header = request.getHeader("Authorization");
-        String name = authentication.getName();
-        if (header == null || !header.startsWith("Basic ")) {
-          throw new UnapprovedClientAuthenticationException("请求头中无client信息");
-        }
         logger.info("Success hanlder"); //这里加入需要的处理
         String  redirectUrl = "index"; //缺省的登陆成功页面
         SavedRequest savedRequest = (SavedRequest) request.getSession().getAttribute("SPRING_SECURITY_SAVED_REQUEST");

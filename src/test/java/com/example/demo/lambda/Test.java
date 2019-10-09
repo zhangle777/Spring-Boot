@@ -12,8 +12,8 @@ import javax.swing.Timer;
 public class Test {
 
   public static void main(String[] args) {
-    Timer timer = new Timer(1000,it->System.out.println(it));
-//    timer.start();
+    Timer timer = new Timer(1000,System.out::println);
+    timer.start();
     List<String> list = Arrays.asList(new String[]{"b","a","c"});
     //方法引用
     Collections.sort(list,String::compareTo);
