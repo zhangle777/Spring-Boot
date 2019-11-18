@@ -58,12 +58,20 @@ public class InnerClassTest {
    * 2.成员内部类可以访问外部类的成员变量(方法)和静态变量(方法)。而不受访问修饰符的影响。访问静态变量：外部类.变量名(方法)。访问成员变量：外部类.this.变量名(方法)
    * 3.成员内部类不能直接使用new关键字创建对象，必须要先创建外部类对象。原理同成员变量一致。例：内部类 对象名=外部内对象.new.内部类()
    * 4.当编译含有内部类的类文件时，会产生两个多个class文件。
-   * 5.成员内部类不能含有静态变量以及静态方法。原理普通成员方法(因为成员内部类要等外部类实例化后才能实例化。违背静态原理)。但可以定义常量
+   * 5.成员内部类不能含有静态变量以及静态方法。因为内部类的加载只能在外部类实例化后才进行，违背静态原理。
    */
   public class Inner{
     public final String aaa = "";
     private String innerName;
     private String name;
+    private final String sss;
+    private static final String hhh = "sss";
+  
+    public Inner(String innerName, String name) {
+      sss = "dffd";
+      this.innerName = innerName;
+      this.name = name;
+    }
   
     public void test(){
       System.out.println(InnerClassTest.AAA);
@@ -79,8 +87,8 @@ public class InnerClassTest {
    * 3.静态内部类访问外部类的静态成员时，可直接调用外部类的成员名(当外部类的静态成员名称与内部类的实例成员名称不同时)。如果相同则需用外部类.变量名
    * 4.创建静态内部类时，不需要外部类对象。可直接：内部类 对象名 = new 内部类()
    */
-  private static class staticInner{
-    private String innerName;
+  private static class StaticInner{
+    private String staticInnerName;
     private String AAA;
     private static String svar = "商贷栓";
     public static void staticTest(){
@@ -95,5 +103,7 @@ public class InnerClassTest {
   public static void main(String[] args) {
     InnerClassTest test = new InnerClassTest();
     test.getInner();
+    //定义成员内部类对象
+    Inner inner = test.new Inner("Sss","dsggs");
   }
 }

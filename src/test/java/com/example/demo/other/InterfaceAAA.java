@@ -5,5 +5,5 @@ package com.example.demo.other;
  * @date 2018/11/16 12:23
  */
 public interface InterfaceAAA {
-
+  int i = 10;
 }

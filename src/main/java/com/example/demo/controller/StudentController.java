@@ -49,6 +49,7 @@ public class StudentController{
 //  @Cacheable(value = "cacheValue",key = "result_student_"+"result.#id")
   public Object getStudentInfo(@RequestParam(value = "id") Integer id){
     Student student = studentService.selectById(id);
+    redisUtil.set(student.getName(),student);
     return student;
   }
 
@@ -59,27 +60,17 @@ public class StudentController{
     if(sort.equals("desc"))
       b = false;
     Page<Student> result = studentService.getStudentPage(page,student,orderBy,b);
-//    redisUtil.set(result.getClass().getSimpleName(),result);
+    redisUtil.set(result.getClass().getSimpleName(),result);
     return result;
   }
 
   @PostMapping("/insert")
-//  @CachePut(value = "cacheValue",key = "result.id")
+  @CachePut(value = "cacheValue",key = "result.id")
   @Transactional
   public Object insertStudent(@Validated StudentForm studentForm) throws Exception{
-    User user = new User();
-    user.setUsername("aaa");
-    user.setPassword("123456");
-    userService.insert(user);
-    
-    for(int i=1;i<4;i++){
-      if(i==3){
-        throw new MyCustomException("sdsds");
-      }
-      studentForm.setAge(studentForm.getAge()+i);
-      studentForm.setSalary(studentForm.getSalary()+i);
-      studentService.insert(studentForm);
-    }
+    studentForm.setAge(studentForm.getAge());
+    studentForm.setSalary(studentForm.getSalary());
+    studentService.insert(studentForm);
     Map<String,Object> result = new HashMap<>();
     result.put("message","添加成功");
     return result;
@@ -88,7 +79,7 @@ public class StudentController{
   @GetMapping("/testCustomer")
   public Object testCustomer(String string){
     for(int i = 0;i<20;i++){
-      studentService.insertToQueue(string);
+      studentService.insertToQueue(string+i);
     }
     return new HashMap<>();
   }

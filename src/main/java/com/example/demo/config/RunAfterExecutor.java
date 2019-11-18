@@ -14,7 +14,7 @@ public class RunAfterExecutor implements ApplicationRunner {
   @Value("${customerNum}")
   private Integer customerNum;
 
-  public static LinkedBlockingQueue<Object> linkedBlockingQueue = new LinkedBlockingQueue<>();
+  public static final LinkedBlockingQueue<Object> linkedBlockingQueue = new LinkedBlockingQueue<>();
 
   @Override
   public void run(ApplicationArguments args) {

@@ -23,7 +23,7 @@ public class ResourceService implements ResourceServerConfigurer {
 //        .anyRequest().authenticated();
     http
         .requestMatchers()
-        .antMatchers("/student/list","/order/**")
+        .antMatchers("/order/**")
         .and()
         .authorizeRequests()
         .anyRequest()
