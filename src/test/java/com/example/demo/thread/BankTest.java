@@ -11,7 +11,7 @@ public class BankTest implements Runnable{
   
   public static final int INITBALANCE = 1000;
   
-  public static final int MAXBALANCE = 1000;
+  public static final int MAXBALANCE = 1000;//如果这里设置为2000，就会出现死锁的情况
   public static final Random RANDOM = new Random();
   private Bank bank;
   
@@ -30,7 +30,7 @@ public class BankTest implements Runnable{
     try {
       while (true){
         int amount = RANDOM.nextInt(MAXBALANCE);
-        bank.transfer2(from,to,amount);
+        bank.transfer(from,to,amount);
         Thread.sleep(10);
       }
     }catch (InterruptedException e){
@@ -41,14 +41,17 @@ public class BankTest implements Runnable{
   public static void main(String[] args) {
     Bank bank = new Bank(NACCOUNTS,INITBALANCE);//创建一个银行类。初始化100个用户。
     for(int i = 0; i<NACCOUNTS;i++){
-      int to = (int) (bank.size() * Math.random());
+      //返回一个0，2之间的随机数。
+      int to = RANDOM.nextInt(NACCOUNTS);
       BankTest bankTest = new BankTest(bank,i,to);
       Thread thread = new Thread(bankTest);
       thread.start();
     }
   }
   
-  /**
-   * 总结
-   */
+//  public static void main(String[] args) {
+//    for(int i = 0;i<100;i++){
+//      System.out.println(RANDOM.nextInt(NACCOUNTS));
+//    }
+//  }
 }
