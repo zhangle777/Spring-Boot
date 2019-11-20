@@ -93,6 +93,34 @@ public class Bank {
     }
   }
   
+  public void transfer3(int from,int to,int amount){
+    if(lock.tryLock()){
+      //临界区
+      try {
+        while (accounts[from] < amount) {
+          System.out.println("当前转出账户为：" + from + ",该账户余额为："+accounts[from]+",转出" + amount + "余额不足");
+          //如余额不足时，该线程进入条件等待池。并且放弃锁。以供其他线程能够访问。
+          // 而该线程则必须等待其他线程调用signalAll()方法唤醒它。当被唤醒后，则从被阻塞的地方继续执行，这里还会继续检查账户的余额。
+          condition.await();
+        }
+        System.out.print(Thread.currentThread());
+        accounts[from] -= amount;
+        System.out.print("从" + from + "账户转出" + amount + ",");
+        accounts[to] += amount;
+        System.out.println(to + "账户收到" + amount + ",总资金为:" + total());
+        //当其他线程吧钱转到被阻塞的线程账户中，会唤醒所有等待的线程。
+        //注意：还有一个signal()方法。表示随机解除等待池中某个线程的阻塞状态。
+        condition.signalAll();
+      }catch(InterruptedException e){
+      }
+      finally {
+        lock.unlock();//解锁，以供其他线程能够访问该方法
+      }
+    }else{
+      System.out.println("获取锁失败");
+    }
+  }
+  
   private int total(){
     int sum = 0;
     for(int a : accounts)
