@@ -26,14 +26,18 @@ public class Test8 {
     stringList.add(1);
     stringList.add(2);
     stringList.remove(1);
-    System.out.println(121);
+    stringList.forEach(System.out::println);
+    System.out.println("==================");
     StringBuffer stringBuffer = new StringBuffer("asss");
-    StringBuilder sb = new StringBuilder("asss");
     stringBuffer.toString();
     int capacity = stringBuffer.capacity(); // value.length
     int length = stringBuffer.length(); //count
-    stringBuffer.append("asss");
-    System.out.println(capacity);
-    System.out.println(length);
+    System.out.println("添加之前的capacity"+capacity);
+    System.out.println("添加之前的length"+length);
+    stringBuffer.append("asss士大夫萨芬的说法是 速度法收到是是是飒飒是事实是是");
+    capacity = stringBuffer.capacity();
+    length = stringBuffer.length();
+    System.out.println("添加之后的capacity"+capacity);
+    System.out.println("添加之后的length"+length);
   }
 }

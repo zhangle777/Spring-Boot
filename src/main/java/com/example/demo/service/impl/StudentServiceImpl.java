@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class StudentServiceImpl extends ServiceImpl<StudentDao,Student> implements StudentService {
-  private LinkedBlockingQueue linkedBlockingQueue = RunAfterExecutor.linkedBlockingQueue;
 
   @Override
   public Page<Student> getStudentPage(Page<Student> page,Student student,String orderBy,boolean sort) {
@@ -36,7 +35,7 @@ public class StudentServiceImpl extends ServiceImpl<StudentDao,Student> implemen
   public void insertToQueue(String string) {
       try {
 //        if (linkedBlockingQueue.size() < 10) {
-          linkedBlockingQueue.put(string);
+          RunAfterExecutor.linkedBlockingQueue.put(string);
           System.out.println("队列添加成功");
 //        }
       }catch (InterruptedException e){
