@@ -83,6 +83,9 @@ StringBuffer类与StringBuilder类详解：
 
 default关键字只能在接口中使用，并且只能修饰方法。不能修饰变量。
 
+关于protected访问修饰符：该修饰符表示子类和同包下可访问。注意：当子类和父类不在同包下时，子类只能访问子类自己实例引用的protected域。
+	另外同包下的非子类可以访问不同包下子类的protected
+
 Object.getClass()方法返回的是当前运行类的类对象。super.getClass()方法如果当前类的父类没有重写getClass()方法，则表示调用的Object.getClass()方法，依然返回当前类的类对象
 
 定义在同一个包内的类可以不经过impor而直接引用
@@ -94,7 +97,7 @@ Object.getClass()方法返回的是当前运行类的类对象。super.getClass(
 		      以降低类间的耦合性。
 	单一职责原则：
 	接口隔离原则：
-	
+
 
 spring cloud 重要组件作用
 	Eureka：服务发现与注册，分为Eureka Client和Eureka Service（注册中心）。每个服务都会作为Eureka Client被注册在Eureka Service中，
@@ -106,11 +109,34 @@ spring cloud 重要组件作用
 
 java采用unicode编码，两个字节表示一个字符，因此char型在java中占两个字节。char输出是ACSII编码
 对char类型变量赋数值时，会自动转换成ASCII编码输出。char类型字面量进行运算时，会先自动转换为ASCII数值，再运算，最后再转为ASCII字符。
-	
+
 关于乱码问题解决方案：
 	1.使用浏览器与服务器编码相匹配。
 	2.tomcat默认的编码是ISO-8859-1。
 	3.servlet中可以主动设置编码格式，来进行数据读取
+
+快速失败和安全失败：
+	1.在使用迭代器对集合进行遍历时，如果线程A正在对集合进行遍历。此时线程B又开始对集合进行修改。会导致线程A抛出ConcurrentModificationException异常。
+	2.在使用迭代器对集合进行遍历的过程中对元素进行了修改/删除等操作。也会倒置线程A抛出ConcurrentModificationException异常
+	3.原因：迭代器在遍历时直接访问集合中的内容，并且在遍历过程中使用一个modCount的变量。集合在被遍历期间如果内容改变，就会改变modCount的值，在遍历
+		下一个元素之前，会检测modCount是否等于expectedModCount的值。若等于则继续遍历。不等则抛出异常。
+		而安全失败在遍历时不会直接在集合内容上访问，而是先复制原有集合内容，在拷贝的集合上进行遍历，所以在遍历中修改元素内容不会被迭代器检测到。
+	总结：在java.util包下的集合类都是快速失败。java.util.concurrent包下的集合类是安全失败。快速失败和安全失败都是对迭代器而言。
+
+拷贝数组的方法：
+	1.System.arraycopy(Object src,  int  srcPos，Object dest，int destPos，int length)：是一个本地方法使用这个方法需要一个已经分配了内存单元的数组。
+	 参数:
+		src:源数组
+	  	srcPos:原数组要复制的起始位置
+		dest:目标数组
+		destPos:目标数组放置的起始位置
+		length:原数组复制的长度
+		注：src和dest必须同类型。
+	2.Arrays.copyOf(T[] original, int newLength)：底层依然调用了System.arraycopy方法 。使用时只需要源数组。它有一个变种方法Arrays.copyOfRange()这个方法多一个参数。
+	可以指定从哪个位置开始复制。
+	3.clone方法：是直接对源数组进行完整复制。该方法是浅复制。最好使用基本数据类型和String(String是因为其值不可变才能使用)
+	4.for循环
+	总结：效率上System.arraycopy>clone>>Arrays.copyOf>for
 
 java中原子操作包括：
 	1.除了long和double之外的基本数据类型赋值操作（在32位的操作系统中，64位的long和double变量会被JVM当作两个分离的32位来操作。所以不具备原子性）
@@ -121,7 +147,7 @@ Java内存模型：
 	java内存模型规定所有变量（不包括线程私有变量和方法参数）都存储在主内存中，每条线程都有自己的工作内存，
 	线程的工作内存中保存了被该线程使用到的主内存变量的拷贝副本，线程对变量的所有操作（读写）都必须在自己的工作内存中进行，不能直接读取主内存。线程的变量值传递由主内存来完成
 
-并发的三个概念： 
+并发的三个概念：
 	1.原子性：即一个或多个操作要么全部执行并且执行过程中不会被打断，要么都不执行。只有基本数据类型读写操作具有原子性（不包含long和double）。
 		可使用synchornized来保证数据的原子性
 	2.可见性：多个线程访问同一个变量时，一个线程改变了这个变量的值，其他线程能够立即看到修改后最新的值
@@ -171,6 +197,15 @@ ThreaLocal：每个线程都可以有自己独立的变量实例。不受其他�
 	ArrayBlockingQueue：一种有界队列，先进先出(IFOF)，必须指定长度，采用数组。不支持插入null，内部维护了一把锁。效率比linkedBlockingQueue低。
 	PriorityBlockingQueue：无界队列，按元素优先级来入队/出队。添加的对象必须是comparable对象或者添加一个比较器。默认长度为11，最大长度为Integer.MAX_VALUE-8(减8是因为有些VM实现在数组头有些内容)，
 		它采用平衡二叉树堆算法的实现。不支持插入null。
-	DelayQueue：一种无界队列，实现延迟获取元素。
-Callable:
-	
+	DelayQueue：一种无界队列，只有在延迟期满时才能从中提取元素。该队列的头部是延迟期满后保存时间最长的Delayed元素。如果延迟都还没有期满，则队列没有头部，并且poll将返回null。当一个元素的
+		getDelay(TimeUnit.NANOSECONDS)方法返回一个小于等于0的值时，将发生到期。即使无法使用take或poll移除未到期的元素，也不会将这些元素作为正常元素对待。
+		例如，size方法同时返回到期和未到期元素的计数。此队列不允许使用null元素
+		可以简单理解他就是一个使用时间作为比较条件的优先级阻塞队列
+
+Future/Callable：实现Callable接口可以实现异步运行的任务，并且会返回一个结果。
+
+ThreadPoolExecutor线程池：使用ThreadPoolExecutor可以指定任务的等待队列。newFixedThreadPool或newCachedThreadPool也可以创建线程池，但是他们的等待队列时无界的。可能会造成内存溢出。
+	参数：corePoolSize：线程长期维护的线程数。不会被回收。也不会idle。maximumPoolSize：线程数的上限，也就时同时只能有这么多线程同时运行。keepAliveTime和：多余的空闲线程(超过corePoolSize)存活时间。
+	unit：时间单位。BlockingQueue<Runnable>：任务的排队队列。最好使用有界队列。并设定上限。ThreadFactory：线程的产生方式。RejectedExecutionHandler：多余任务拒绝策略。
+	工作顺序：如果运行的任务线程少于corePoolSize，则新的任务会使用新线程。当运行的任务线程超过corePoolSize，则新的任务会添加到任务排队队列。直到队列满为止。多余任务会用创建新线程的方式来执行，
+	直到总运行线程超过maximumPoolSize时。多余任务就会采用拒绝策略来拒绝执行。
